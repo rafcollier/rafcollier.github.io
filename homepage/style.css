@@ -1,3 +1,4 @@
+
 body {
     background-color: black;
     background-image:
@@ -37,22 +38,14 @@ a {
     color: white;
 }
 
-.top-text {
-    margin-top: 50px;
+a:hover {
+  color: #C9995D;
 }
 
-.left-text {
-    margin-left: 30px;
-    line-height: 0.5;
+.homepage-container {
+  max-width: 42em;
 }
 
-.middle-box {
-    position: absolute;
-    left: 30%;
-    top: 300px;
+.right-align-box {
     text-align: right;
-    margin-right: 10%;
-    width: 40%;
 }
-
-x

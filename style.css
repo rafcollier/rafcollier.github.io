@@ -6,6 +6,7 @@ body {
                 rgba(0, 150, 0, 0.75), black 120%
             );
     height: auto;
+    width: auto;
     color: white;
     font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #C8C8C8;
@@ -16,8 +17,8 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     background: repeating-linear-gradient(
             0deg,
             rgba(26,198,204,0.15),
@@ -47,4 +48,5 @@ a:hover {
 
 .right-align-box {
     text-align: right;
+    margin-bottom: 100px;
 }

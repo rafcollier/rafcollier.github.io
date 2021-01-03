@@ -5,28 +5,17 @@ body {
             radial-gradient(
                 rgba(0, 150, 0, 0.75), black 120%
             );
-    height: auto;
-    width: auto;
     color: white;
     font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #C8C8C8;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    background: repeating-linear-gradient(
-            0deg,
-            rgba(26,198,204,0.15),
-            rgba(26,198,204,0.15) 1px,
-            transparent 1px,
-            transparent 2px
-    );
-    pointer-events: none;
+
 }
 
 ::selection {
@@ -49,4 +38,5 @@ a:hover {
 .right-align-box {
     text-align: right;
     margin-bottom: 100px;
+    margin-top: 60px;
 }

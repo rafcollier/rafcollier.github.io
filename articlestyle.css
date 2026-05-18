@@ -11,8 +11,13 @@ body {
     background: transparent;
     height: 500vh;
     color: white;
-    font: 1.3rem Inconsolata, monospace;
+    font: 1.3rem 'IBM Plex Mono', monospace;
     text-shadow: 0 0 5px #C8C8C8;
+}
+
+.emdash {
+    font-family: Georgia, serif;
+    padding: 0 0.03em;
 }
 
 body::after {
@@ -87,6 +92,22 @@ pre {
     text-align: left;
     margin-right: 10%;
     width: 50%;
+}
+
+.quoteText {
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    opacity: 0.85;
+    letter-spacing: 0.3px;
+    margin: 0.2em 0;
+}
+
+.quoteLeft {
+    padding-left: 28px;
+}
+
+.quoteRight {
+    padding-left: 90px;
 }
 
 @media (max-width: 600px) {

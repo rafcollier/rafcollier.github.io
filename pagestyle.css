@@ -73,6 +73,15 @@ a {
     width: 55%;
 }
 
+.quoteText {
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    color: #d7ffd7;
+    opacity: 0.92;
+    letter-spacing: 0.4px;
+    margin-left: 32px;
+}
+
 @media (max-width: 600px) {
     body {
         font-size: 1.1rem;

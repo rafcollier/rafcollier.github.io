@@ -68,7 +68,7 @@ h1, h2 {
     position: absolute;
     left: 30%;
     top: 300px;
-    text-align: right;
+    text-align: left;
     margin-right: 10%;
     width: 50%;
 }

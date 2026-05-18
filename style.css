@@ -41,6 +41,14 @@ a {
     color: white;
 }
 
+.section-title {
+    font-size: 1.8rem;
+}
+
+.photo-caption {
+    font-size: 0.85rem;
+}
+
 .headshot {
     width: 100%;
     max-width: 280px;

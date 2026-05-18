@@ -41,22 +41,56 @@ a {
     color: white;
 }
 
+.pub-name {
+    font-size: 1.6rem;
+}
+
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 3.5rem;
+    text-decoration: none;
+}
+
 .top-text {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .left-text {
-    margin-left: 30px;
+    font-size: 0.75rem;
     line-height: 0.5;
+    text-align: right;
+    padding-right: 30px;
 }
 
 .middle-box {
     position: absolute;
-    left: 30%;
-    top: 300px;
+    left: 20%;
+    top: 220px;
     text-align: right;
-    margin-right: 10%;
-    width: 30%;
+    margin-right: 5%;
+    width: 55%;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .left-text {
+        display: none;
+    }
+
+    .middle-box {
+        position: static;
+        width: auto;
+        margin: 20px 15px;
+        text-align: left;
+        padding: 0;
+    }
 }
 
 

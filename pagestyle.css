@@ -1,23 +1,27 @@
-body {
+html {
     background-color: black;
     background-image:
             radial-gradient(
-                    rgba(0, 150, 0, 0.75), black 120%
+                rgba(0, 150, 0, 0.75), black 120%
             );
+    background-attachment: fixed;
+}
+
+body {
+    background: transparent;
     height: 200vh;
     color: white;
     font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #C8C8C8;
-    background-repeat: repeat-y;
 }
 
 body::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     background: repeating-linear-gradient(
             0deg,
             rgba(26,198,204,0.15),

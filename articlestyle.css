@@ -1,23 +1,27 @@
-body {
+html {
     background-color: black;
     background-image:
             radial-gradient(
-                    rgba(0, 150, 0, 0.75), black 120%
+                rgba(0, 150, 0, 0.75), black 120%
             );
+    background-attachment: fixed;
+}
+
+body {
+    background: transparent;
     height: 500vh;
     color: white;
     font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #C8C8C8;
-    background-repeat: repeat-y;
 }
 
 body::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 500vh;
+    height: 100vh;
     background: repeating-linear-gradient(
             0deg,
             rgba(26,198,204,0.15),
@@ -37,13 +41,27 @@ a {
     color: white;
 }
 
+h1, h2 {
+    font-weight: normal;
+}
+
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 3.5rem;
+    text-decoration: none;
+}
+
 .top-text {
     margin-top: 50px;
 }
 
 .left-text {
-    margin-left: 30px;
+    font-size: 0.75rem;
     line-height: 0.5;
+    text-align: right;
+    padding-right: 30px;
 }
 
 .middle-box {

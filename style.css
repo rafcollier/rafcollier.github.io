@@ -38,21 +38,47 @@ a {
 }
 
 .top-text {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .left-text {
-    margin-left: 30px;
+    font-size: 0.75rem;
     line-height: 0.5;
+    text-align: right;
+    padding-right: 30px;
 }
 
 .middle-box {
     position: absolute;
     left: 30%;
-    top: 300px;
+    top: 220px;
     text-align: right;
     margin-right: 10%;
     width: 40%;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    body::after {
+        height: 100%;
+    }
+
+    .left-text {
+        display: none;
+    }
+
+    .middle-box {
+        position: static;
+        width: auto;
+        margin: 20px 15px;
+        text-align: left;
+        padding: 0;
+    }
 }
 
 

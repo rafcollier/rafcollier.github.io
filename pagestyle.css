@@ -75,7 +75,7 @@ a {
 
 @media (max-width: 600px) {
     body {
-        font-size: 1rem;
+        font-size: 1.1rem;
         height: auto;
         min-height: 100vh;
     }
@@ -84,10 +84,17 @@ a {
         display: none;
     }
 
+    .back-arrow {
+        position: static;
+        display: block;
+        padding: 15px 15px 5px;
+        font-size: 2.5rem;
+    }
+
     .middle-box {
         position: static;
         width: auto;
-        margin: 20px 15px;
+        margin: 5px 15px 30px;
         text-align: left;
         padding: 0;
     }

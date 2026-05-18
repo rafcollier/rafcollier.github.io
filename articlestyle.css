@@ -45,12 +45,28 @@ h1, h2 {
     font-weight: normal;
 }
 
+pre {
+    white-space: pre-wrap;
+    background: rgba(0, 255, 0, 0.07);
+    border-left: 2px solid rgba(0, 255, 0, 0.4);
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
 .back-arrow {
     position: fixed;
     top: 20px;
     left: 20px;
     font-size: 3.5rem;
     text-decoration: none;
+}
+
+.back-arrow-bottom {
+    display: none;
+    font-size: 2.5rem;
+    text-decoration: none;
+    margin-top: 30px;
 }
 
 .top-text {
@@ -71,6 +87,37 @@ h1, h2 {
     text-align: left;
     margin-right: 10%;
     width: 50%;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1.1rem;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .left-text {
+        display: none;
+    }
+
+    .back-arrow {
+        position: static;
+        display: block;
+        padding: 15px 15px 5px;
+        font-size: 2.5rem;
+    }
+
+    .middle-box {
+        position: static;
+        width: auto;
+        left: auto;
+        top: auto;
+        margin: 5px 15px 30px;
+    }
+
+    .back-arrow-bottom {
+        display: block;
+    }
 }
 
 

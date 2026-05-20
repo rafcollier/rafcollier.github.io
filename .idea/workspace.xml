@@ -6,15 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="b9c18e21-7043-4825-89a9-e40538366dde" name="Default Changelist" comment="tweak styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/articlestyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/articlestyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/other/big-agua.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/other/big-agua.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/other/bookworm.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/other/bookworm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/other/finding-my-voice.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/other/finding-my-voice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/other/head-terrible-thing.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/other/head-terrible-thing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/other/no-left-turn.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/other/no-left-turn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/science/health-myths.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/science/health-myths.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/science/master-clinical-trial.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/science/master-clinical-trial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/science/medical-writing.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/science/medical-writing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/science/waiting-to-exhale.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/science/waiting-to-exhale.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/science/wartime-trauma-care.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/science/wartime-trauma-care.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-brain-models.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-brain-models.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-first-and-last.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-first-and-last.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-flight-simulator.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-flight-simulator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-javascript-framework.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-javascript-framework.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-knees.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-knees.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-most-important-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-most-important-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articles/tech/tech-programming-hard.html" beforeDir="false" afterPath="$PROJECT_DIR$/articles/tech/tech-programming-hard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/first-and-last.html" beforeDir="false" afterPath="$PROJECT_DIR$/first-and-last.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/other-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/other-articles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pagestyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/pagestyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/science-medicine-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/science-medicine-articles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/second-shift-chapter-one.html" beforeDir="false" afterPath="$PROJECT_DIR$/second-shift-chapter-one.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/software-projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tech-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tech-articles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +91,7 @@
       <workItem from="1609519724545" duration="16708000" />
       <workItem from="1609607796077" duration="469000" />
       <workItem from="1779062336442" duration="2676000" />
-      <workItem from="1779303106870" duration="4002000" />
+      <workItem from="1779303106870" duration="4734000" />
     </task>
     <task id="LOCAL-00001" summary="remove subpages folder">
       <option name="closed" value="true" />

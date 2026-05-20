@@ -101,7 +101,7 @@ a {
 
     .headshot {
         max-width: 220px;
-        margin: 0;
+        margin: 0 auto;
     }
 }
 

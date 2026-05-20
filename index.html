@@ -25,6 +25,23 @@
             <p>time: 1332ms</p>
         </div>
 
+        <!-- desktop nav (browser only) -->
+        <nav class="desktop-nav">
+            <a href="#bio">[bio]</a>
+            <a href="#journalism">[journalism]</a>
+            <a href="#firstlast">[first&amp;last]</a>
+            <a href="#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+
         <div class="middle-box">
             <p class="contact">contact: roger@rogercollier.com</p>
             <p class="divider">.........................</p>
@@ -35,7 +52,7 @@
             <p>young-adult speculative fiction</p>
             <p>read chapter one <a href="second-shift-chapter-one.html">[link]</a></p>
             <p class="divider">.........................</p>
-            <p class="section-title">bio:</p>
+            <p id="bio" class="section-title">bio:</p>
             <p>full-stack software engineer and fiction writer</p>
             <p>former:</p>
             <p>news writer/editor for the Canadian Medical Association Journal</p>
@@ -45,12 +62,12 @@
             <p>misc:</p>
             <p>as a teen, subject sold ill-fitting menswear to semi-fashionable individuals in a mid-sized shopping facility</p>
             <p class="divider">.........................</p>
-            <p class="section-title">journalism:</p>
+            <p id="journalism" class="section-title">journalism:</p>
             <p>tech: <a href="tech-articles.html">[link]</a></p>
             <p>science & medicine: <a href="science-medicine-articles.html"> [link]</a></p>
             <p>misc: <a href="other-articles.html"> [link]</a></p>
             <p class="divider">.........................</p>
-            <p class="section-title">first & last:</p>
+            <p id="firstlast" class="section-title">first & last:</p>
             <p>subject displays unusual affinity for first sentences of books</p>
             <p>also last sentences</p>
             <p>see collection <a href="first-and-last.html">[link]</a></p>
@@ -64,7 +81,7 @@
             <p>x <a href="https://twitter.com/rogerafcollier"> [link]</a></p>
             <p>linkedin <a href="https://ca.linkedin.com/in/rogerafcollier"> [link]</a></p>
             <p class="divider">.........................</p>
-            <p class="section-title">misc:</p>
+            <p id="misc" class="section-title">misc:</p>
             <p>pet:</p>
             <img src="images/walter.jpg" alt="subject's pet photo No. wooF" class="headshot">
             <p class="photo-caption">subject's pet photo No. wooF</p>
@@ -72,5 +89,17 @@
             <p>breed: bull dog (French)</p>
             <p>age: unknown (dog years)</p>
         </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
     </body>
 </html>

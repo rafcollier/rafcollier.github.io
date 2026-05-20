@@ -39,6 +39,12 @@ body::after {
 
 a {
     color: white;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 8px #00ff00;
+    color: #aaffaa;
 }
 
 .section-title {
@@ -76,6 +82,34 @@ a {
     width: 55%;
 }
 
+/* desktop nav */
+.desktop-nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.desktop-nav a {
+    margin-right: 1.2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.desktop-nav a:hover {
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* hamburger (hidden on desktop) */
+.hamburger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
 @media (max-width: 600px) {
     body {
         font-size: 1rem;
@@ -108,6 +142,55 @@ a {
     .divider,
     .contact {
         text-align: center;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .middle-box {
+        padding-top: 55px;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 1.6rem;
+        cursor: pointer;
+        z-index: 100;
+        text-shadow: 0 0 8px #00ff00;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 45px;
+        right: 15px;
+        background: white !important;
+        color: #007700;
+        text-shadow: none;
+        border: 1px solid rgba(0,150,0,0.6);
+        padding: 0.8rem 1.2rem;
+        z-index: 1000;
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #007700;
+        text-shadow: none;
+    }
+
+    .mobile-menu a:hover {
+        color: #00aa00;
     }
 }
 

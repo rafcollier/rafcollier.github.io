@@ -103,6 +103,11 @@ a {
         max-width: 220px;
         margin: 0 auto;
     }
+
+    .photo-caption,
+    .divider {
+        text-align: center;
+    }
 }
 
 

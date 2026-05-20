@@ -105,7 +105,8 @@ a {
     }
 
     .photo-caption,
-    .divider {
+    .divider,
+    .contact {
         text-align: center;
     }
 }

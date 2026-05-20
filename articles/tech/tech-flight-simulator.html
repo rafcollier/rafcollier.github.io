@@ -15,7 +15,25 @@
     </script>
 </head>
 <body>
-<a href="../../tech-articles.html" class="back-arrow">←</a>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio">[bio]</a>
+            <a href="../../index.html#journalism">[journalism]</a>
+            <a href="../../index.html#firstlast">[first&amp;last]</a>
+            <a href="../../index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="../../index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="../../index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="../../index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+<a href="../../tech-articles.html" class="back-arrow">&#8592;</a>
 <div class="left-text">
     <p class="top-text">subject matter: tech articles</p>
     <p>status: loading...</p>
@@ -37,7 +55,19 @@
     <p>Construction of the simulator began last September and should be completed within two years. &quot;If it does everything we think it can do, it will have all kinds of applications,&quot; says Langlois, who envisions it being used in  education, for research, and to train commercial, military, and aerobatic pilots.</p>
 
     <p>Better simulators make for safer skies. So does the experience gained by the hundreds of student engineers who worked on this project, says Langlois. &quot;The contribution to the simulation industry goes far beyond this simulator.&quot;</p>
-    <a href="../../tech-articles.html" class="back-arrow-bottom">←</a>
+    <a href="../../tech-articles.html" class="back-arrow-bottom">&#8592;</a>
 </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

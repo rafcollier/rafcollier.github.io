@@ -15,7 +15,25 @@
     </script>
 </head>
 <body>
-<a href="../../tech-articles.html" class="back-arrow">←</a>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio">[bio]</a>
+            <a href="../../index.html#journalism">[journalism]</a>
+            <a href="../../index.html#firstlast">[first&amp;last]</a>
+            <a href="../../index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="../../index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="../../index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="../../index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+<a href="../../tech-articles.html" class="back-arrow">&#8592;</a>
 <div class="left-text">
     <p class="top-text">subject matter: tech articles</p>
     <p>status: loading...</p>
@@ -64,7 +82,19 @@
     <p>That's where Deez Knees comes in. Instead of clapping back at that internet troll, share a photo of your knees. You'll both soon realize you aren't so different after all. Instead of bashing Republicans, or Democrats or Saskatchewanians, scroll through your Deez Knees feed and reflect on how we are all diverse yet the same, different yet not so different, unequal in some ways yet — really, when you think about it, really think about it — always equal in all the ways that count.</p>
 
     <p>It's time, my friend. Time to make this world a better place. Time to bring light into darkness. Time to turn conflict into proflict. All we need is you, me and Deez Knees. We can do it. Two knees at a time.</p>
-    <a href="../../tech-articles.html" class="back-arrow-bottom">←</a>
+    <a href="../../tech-articles.html" class="back-arrow-bottom">&#8592;</a>
 </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -15,7 +15,25 @@
     </script>
 </head>
 <body>
-<a href="../../science-medicine-articles.html" class="back-arrow">←</a>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio">[bio]</a>
+            <a href="../../index.html#journalism">[journalism]</a>
+            <a href="../../index.html#firstlast">[first&amp;last]</a>
+            <a href="../../index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="../../index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="../../index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="../../index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+<a href="../../science-medicine-articles.html" class="back-arrow">&#8592;</a>
 <div class="left-text">
     <p class="top-text">subject matter: sci & med articles</p>
     <p>status: loading...</p>
@@ -41,7 +59,19 @@
 <p>At the clinical level, doctors attempting to change the minds of patients who cling to potentially harmful health myths and misconceptions will need patience. People are unlikely to abandon long-held beliefs overnight, especially if it means abandoning online communities that have become an important part of their lives. A meta-analysis of the factors underlying effective messages to counter attitudes based on misinformation found that these beliefs are persistent in the face of debunking.4 Success rates improve, however, if people are encouraged to scrutinize their information sources, and if the debunking message includes new information that provides additional context rather than merely labelling a patient&rsquo;s belief as incorrect.</p>
 
 <p>The Internet and social media aren&rsquo;t going anywhere, and patients will continue to seek and share health information online. Misinformation will persist as well. Helping patients live healthier lives includes helping them find better health information.</p>
-    <a href="../../science-medicine-articles.html" class="back-arrow-bottom">←</a>
+    <a href="../../science-medicine-articles.html" class="back-arrow-bottom">&#8592;</a>
 </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

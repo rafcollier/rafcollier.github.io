@@ -44,6 +44,55 @@ body::after {
 
 a {
     color: white;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 8px #00ff00;
+    color: #aaffaa;
+}
+
+/* fade mask at top */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 55px;
+    background: linear-gradient(to bottom, rgba(0, 60, 0, 0.97) 20%, transparent 100%);
+    z-index: 99;
+    pointer-events: none;
+}
+
+/* desktop nav */
+.desktop-nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.desktop-nav a {
+    margin-right: 1.2rem;
+    text-decoration: none;
+    color: white;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+    text-shadow: 0 0 8px #00ff00;
+    color: #aaffaa;
+}
+
+/* hamburger (hidden on desktop) */
+.hamburger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 h1, h2 {
@@ -61,10 +110,11 @@ pre {
 
 .back-arrow {
     position: fixed;
-    top: 20px;
+    top: 50px;
     left: 20px;
     font-size: 3.5rem;
     text-decoration: none;
+    z-index: 100;
 }
 
 .back-arrow-bottom {
@@ -88,7 +138,7 @@ pre {
 .middle-box {
     position: absolute;
     left: 30%;
-    top: 300px;
+    top: 160px;
     text-align: left;
     margin-right: 10%;
     width: 50%;
@@ -121,6 +171,10 @@ pre {
         display: none;
     }
 
+    .desktop-nav {
+        display: none;
+    }
+
     .back-arrow {
         position: static;
         display: block;
@@ -138,6 +192,48 @@ pre {
 
     .back-arrow-bottom {
         display: block;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 1.6rem;
+        cursor: pointer;
+        z-index: 1000;
+        text-shadow: 0 0 8px #00ff00;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 45px;
+        right: 15px;
+        background: white !important;
+        color: #007700;
+        text-shadow: none;
+        border: 1px solid rgba(0,150,0,0.6);
+        border-radius: 8px;
+        padding: 0.8rem 1.2rem;
+        z-index: 1000;
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #007700;
+        text-shadow: none;
+    }
+
+    .mobile-menu a:hover {
+        color: #00aa00;
     }
 }
 

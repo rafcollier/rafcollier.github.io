@@ -15,7 +15,25 @@
     </script>
 </head>
 <body>
-<a href="../../science-medicine-articles.html" class="back-arrow">←</a>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio">[bio]</a>
+            <a href="../../index.html#journalism">[journalism]</a>
+            <a href="../../index.html#firstlast">[first&amp;last]</a>
+            <a href="../../index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../../second-shift-chapter-one.html">[the second shift]</a>
+            <a href="../../index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="../../index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="../../index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="../../index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+<a href="../../science-medicine-articles.html" class="back-arrow">&#8592;</a>
 <div class="left-text">
     <p class="top-text">subject matter: sci & med articles</p>
     <p>status: loading...</p>
@@ -81,7 +99,19 @@
 <p>Outside of work, Yusuf&rsquo;s main interest is family. He is married and has three children: one a pediatrician, another in medical school, the youngest still &ldquo;finding herself.&rdquo; He occasionally finds time to read The Economist or a book on history or philosophy, squeezing in some fiction by Salman Rushdie or V.S. Naipaul now and then.</p>
 
 <p>Though he no longer plays field hockey, as in his younger days, he does play a little golf. &ldquo;The word &lsquo;play&rsquo; may be giving it a high level of respectability that it doesn&rsquo;t deserve,&rdquo; he says. &ldquo;My wife calls it a very inefficient way of chopping grass.&rdquo;</p>
-    <a href="../../science-medicine-articles.html" class="back-arrow-bottom">←</a>
+    <a href="../../science-medicine-articles.html" class="back-arrow-bottom">&#8592;</a>
 </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

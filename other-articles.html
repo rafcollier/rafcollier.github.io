@@ -15,6 +15,24 @@
     </script>
 </head>
 <body>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="index.html#bio">[bio]</a>
+            <a href="index.html#journalism">[journalism]</a>
+            <a href="index.html#firstlast">[first&amp;last]</a>
+            <a href="index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
 <a href="index.html" class="back-arrow">&#8592;</a>
 <div class="left-text">
     <p class="top-text">subject matter: misc articles</p>
@@ -34,5 +52,17 @@
     <p class="pub-name">Christian Science Monitor</p>
     <p>Awakening the Bookworm Within <a href="articles/other/bookworm.html">[link]</a></p>
 </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

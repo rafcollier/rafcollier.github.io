@@ -76,10 +76,28 @@ a:hover {
 .middle-box {
     position: absolute;
     left: 20%;
-    top: 220px;
+    top: 160px;
     text-align: right;
     margin-right: 5%;
     width: 55%;
+}
+
+/* fade mask at top so content doesn't clash with fixed nav */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 55px;
+    background: linear-gradient(to bottom, rgba(0, 60, 0, 0.97) 20%, transparent 100%);
+    z-index: 99;
+    pointer-events: none;
+}
+
+/* offset anchor scroll targets so they don't hide under fixed nav */
+#bio, #journalism, #firstlast, #misc {
+    scroll-margin-top: 50px;
 }
 
 /* desktop nav */
@@ -172,6 +190,7 @@ a:hover {
         color: #007700;
         text-shadow: none;
         border: 1px solid rgba(0,150,0,0.6);
+        border-radius: 8px;
         padding: 0.8rem 1.2rem;
         z-index: 1000;
         flex-direction: column;

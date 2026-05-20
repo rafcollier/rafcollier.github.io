@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9c18e21-7043-4825-89a9-e40538366dde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/rogerHeadShot.png" afterDir="false" />
+    <list default="true" id="b9c18e21-7043-4825-89a9-e40538366dde" name="Default Changelist" comment="tweak styles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/articlestyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/articlestyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-and-last.html" beforeDir="false" afterPath="$PROJECT_DIR$/first-and-last.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/other-articles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagestyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/pagestyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/science-medicine-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/science-medicine-articles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/second-shift-chapter-one.html" beforeDir="false" afterPath="$PROJECT_DIR$/second-shift-chapter-one.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-projects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tech-articles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tech-articles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,34 +25,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="1mRBRVIyyO1BvCMNlbjMcfjbmXl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "source",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/rcollier/RC/personalWebsite",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;source&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rcollier/RC/personalWebsite&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -71,10 +78,85 @@
       <workItem from="1609519724545" duration="16708000" />
       <workItem from="1609607796077" duration="469000" />
       <workItem from="1779062336442" duration="2676000" />
+      <workItem from="1779303106870" duration="4002000" />
     </task>
+    <task id="LOCAL-00001" summary="remove subpages folder">
+      <option name="closed" value="true" />
+      <created>1779119673617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779119673617</updated>
+    </task>
+    <task id="LOCAL-00002" summary="remove subpages folder">
+      <option name="closed" value="true" />
+      <created>1779119908092</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779119908092</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add google analytics">
+      <option name="closed" value="true" />
+      <created>1779124753643</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779124753643</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix mobile view">
+      <option name="closed" value="true" />
+      <created>1779125092298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779125092298</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix chaptare one format">
+      <option name="closed" value="true" />
+      <created>1779130480071</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779130480071</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update first and last">
+      <option name="closed" value="true" />
+      <created>1779143003615</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779143003615</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add google analytics">
+      <option name="closed" value="true" />
+      <created>1779303500169</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779303500169</updated>
+    </task>
+    <task id="LOCAL-00008" summary="tweak styles">
+      <option name="closed" value="true" />
+      <created>1779304178077</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779304178077</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove subpages folder" />
+    <MESSAGE value="fix mobile view" />
+    <MESSAGE value="fix chaptare one format" />
+    <MESSAGE value="update first and last" />
+    <MESSAGE value="add google analytics" />
+    <MESSAGE value="tweak styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="tweak styles" />
   </component>
 </project>

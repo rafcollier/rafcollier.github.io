@@ -15,6 +15,34 @@
             font-size: 1rem;
             margin-bottom: 0.1em;
         }
+        #alpha-nav {
+            position: fixed;
+            top: 108px;
+            left: 20px;
+            font-size: 0.65rem;
+            line-height: 1.7;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        #alpha-nav a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.35);
+            transition: color 0.15s ease, text-shadow 0.15s ease;
+        }
+        #alpha-nav a:hover {
+            color: #aaffaa;
+            text-shadow: 0 0 6px #00ff00;
+        }
+        #alpha-nav a.dim {
+            color: rgba(255,255,255,0.12);
+            pointer-events: none;
+        }
+        @media (max-width: 600px) {
+            #alpha-nav { display: none; }
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LK5RQ82LQV"></script>
@@ -48,6 +76,35 @@
             <a href="index.html#misc" onclick="toggleMenu()">[misc]</a>
         </div>
 <a href="index.html" class="back-arrow">&#8592;</a>
+<nav id="alpha-nav">
+    <a href="#" data-letter="#">[#]</a>
+    <a href="#" data-letter="A">[A]</a>
+    <a href="#" data-letter="B">[B]</a>
+    <a href="#" data-letter="C">[C]</a>
+    <a href="#" data-letter="D">[D]</a>
+    <a href="#" data-letter="E">[E]</a>
+    <a href="#" data-letter="F">[F]</a>
+    <a href="#" data-letter="G">[G]</a>
+    <a href="#" data-letter="H">[H]</a>
+    <a href="#" data-letter="I">[I]</a>
+    <a href="#" data-letter="J">[J]</a>
+    <a href="#" data-letter="K">[K]</a>
+    <a href="#" data-letter="L">[L]</a>
+    <a href="#" data-letter="M">[M]</a>
+    <a href="#" data-letter="N">[N]</a>
+    <a href="#" data-letter="O">[O]</a>
+    <a href="#" data-letter="P">[P]</a>
+    <a href="#" data-letter="Q">[Q]</a>
+    <a href="#" data-letter="R">[R]</a>
+    <a href="#" data-letter="S">[S]</a>
+    <a href="#" data-letter="T">[T]</a>
+    <a href="#" data-letter="U">[U]</a>
+    <a href="#" data-letter="V">[V]</a>
+    <a href="#" data-letter="W">[W]</a>
+    <a href="#" data-letter="X">[X]</a>
+    <a href="#" data-letter="Y">[Y]</a>
+    <a href="#" data-letter="Z">[Z]</a>
+</nav>
 <div class="left-text">
     <p class="top-text">subject matter: first &amp; last sentences</p>
     <p>status: loading...</p>
@@ -852,21 +909,6 @@ The Eye at last must see itself
     <p class="pub-name">MONA LISA OVERDRIVE (WILLIAM GIBSON)</p>
     <p>The ghost was her father's parting gift, presented by a black-clad secretary in a departure lounge at Narita.</p>
     <p class="last-sentence">Now she steps across rolling dunes of soiled pink satin, under a tooled sky, free at last of the room and its data.</p>
-</div>
-    <script>
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-        }
-        document.addEventListener('click', function(e) {
-            var menu = document.getElementById('mobileMenu');
-            var hamburger = document.getElementById('hamburger');
-            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
-                menu.classList.remove('open');
-            }
-        });
-    </script>
-</body>
-</html
     <p>.........................</p>
 
     <p class="pub-name">MONEYBALL (MICHAEL LEWIS)</p>
@@ -1471,6 +1513,46 @@ The Eye at last must see itself
 
     <p class="pub-name">THE YIDDISH POLICEMEN’S UNION (MICHAEL CHABON)</p>
     <p>Nine months Landsman’s been flopping at the Hotel Zamenhof without any of his fellow residents managing to get themselves murdered.</p>
-    <p class="last-sentence">The land that he and she were promised was bounded only by the fringes of their wedding canopy, by the dog-eared corners of their cards of membership in an international fraternity whose members carry their patrimony in a tote bag, their world on the tip of their tongue. “Brennan,” Landsman says. “I have a story for you.”</p>
+    <p class=”last-sentence”>The land that he and she were promised was bounded only by the fringes of their wedding canopy, by the dog-eared corners of their cards of membership in an international fraternity whose members carry their patrimony in a tote bag, their world on the tip of their tongue. “Brennan,” Landsman says. “I have a story for you.”</p>
     <p>.........................</p>
->
+</div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+
+        (function() {
+            var nav = document.getElementById('alpha-nav');
+            if (!nav) return;
+            var pubNames = Array.from(document.querySelectorAll('.pub-name'));
+            var letterMap = {};
+            pubNames.forEach(function(el) {
+                var title = el.textContent.trim().replace(/^(THE |AN |A )/i, '');
+                var ch = title[0].toUpperCase();
+                var letter = /[A-Z]/.test(ch) ? ch : '#';
+                if (!letterMap[letter]) letterMap[letter] = el;
+            });
+            nav.querySelectorAll('a').forEach(function(a) {
+                var letter = a.dataset.letter;
+                if (!letterMap[letter]) {
+                    a.classList.add('dim');
+                } else {
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var el = letterMap[letter];
+                        var y = el.getBoundingClientRect().top + window.scrollY - 90;
+                        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

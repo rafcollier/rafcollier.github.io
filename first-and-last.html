@@ -44,70 +44,90 @@
             #alpha-nav { display: none; }
         }
 
-        #mobile-search-btn {
-            display: none;
+        #search-btn {
+            position: fixed;
+            top: 112px;
+            left: 20px;
+            right: auto;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1001;
+            filter: drop-shadow(0 0 5px #00ff00);
+            opacity: 0.85;
         }
-        #mobile-search-box {
-            display: none;
+        #search-btn:hover {
+            opacity: 1;
+            filter: drop-shadow(0 0 8px #00ff00);
         }
         @media (max-width: 600px) {
-            #mobile-search-btn {
-                display: block;
-                position: fixed;
+            #search-btn {
                 top: 15px;
-                right: 50px;
-                font-size: 1.6rem;
-                cursor: pointer;
-                z-index: 1001;
-                line-height: 1;
-                filter: brightness(0) invert(1) drop-shadow(0 0 6px #00ff00);
+                left: auto;
+                right: 52px;
+                width: 22px;
+                height: 30px;
             }
-            #mobile-search-box {
-                position: fixed;
+        }
+        #search-box {
+            display: none;
+            position: fixed;
+            top: 136px;
+            left: 20px;
+            right: auto;
+            width: 280px;
+            z-index: 1000;
+            background: white;
+            border: 1px solid rgba(0,150,0,0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 12px rgba(0,180,0,0.4);
+        }
+        #search-box.open {
+            display: block;
+        }
+        @media (max-width: 600px) {
+            #search-box {
                 top: 50px;
                 left: 10px;
                 right: 10px;
-                z-index: 1000;
-                border-radius: 6px;
-                overflow: hidden;
-                box-shadow: 0 0 12px rgba(0,180,0,0.4);
+                width: auto;
             }
-            #mobile-search-box.open {
-                display: block;
-            }
-            #search-input {
-                width: 100%;
-                box-sizing: border-box;
-                background: #001a00;
-                color: #aaffaa;
-                border: none;
-                border-bottom: 1px solid rgba(0,150,0,0.5);
-                font: 1rem Inconsolata, monospace;
-                padding: 10px 14px;
-                outline: none;
-            }
-            #search-input::placeholder {
-                color: rgba(170,255,170,0.4);
-            }
-            #search-results {
-                background: #001a00;
-                max-height: 55vh;
-                overflow-y: auto;
-            }
-            .search-item {
-                padding: 9px 14px;
-                font: 0.85rem Inconsolata, monospace;
-                color: rgba(255,255,255,0.75);
-                cursor: pointer;
-                border-bottom: 1px solid rgba(0,100,0,0.3);
-            }
-            .search-item:active {
-                background: rgba(0,150,0,0.25);
-                color: #aaffaa;
-            }
-            .search-hi {
-                color: #00ff00;
-            }
+        }
+        #search-input {
+            width: 100%;
+            box-sizing: border-box;
+            background: white;
+            color: #007700;
+            border: none;
+            border-bottom: 1px solid rgba(0,150,0,0.5);
+            font: 1rem Inconsolata, monospace;
+            padding: 10px 14px;
+            outline: none;
+        }
+        #search-input::placeholder {
+            color: rgba(0,119,0,0.4);
+        }
+        #search-results {
+            background: white;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .search-item {
+            padding: 9px 14px;
+            font: 0.85rem Inconsolata, monospace;
+            color: #007700;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0,100,0,0.3);
+        }
+        .search-item:hover {
+            background: rgba(0,150,0,0.1);
+        }
+        .search-hi {
+            color: #00aa00;
+            font-weight: bold;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -171,8 +191,13 @@
     <a href="#" data-letter="Y">[Y]</a>
     <a href="#" data-letter="Z">[Z]</a>
 </nav>
-<div id="mobile-search-btn" onclick="toggleSearch()">🔍</div>
-<div id="mobile-search-box">
+<div id="search-btn" onclick="toggleSearch()">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <circle cx="10" cy="10" r="6.5" stroke="white" stroke-width="2.2"/>
+        <line x1="14.8" y1="14.8" x2="21.5" y2="21.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+</div>
+<div id="search-box">
     <input type="text" id="search-input" placeholder="search titles..." autocomplete="off">
     <div id="search-results"></div>
 </div>
@@ -1589,7 +1614,7 @@ The Eye at last must see itself
 </div>
     <script>
         function toggleSearch() {
-            var box = document.getElementById('mobile-search-box');
+            var box = document.getElementById('search-box');
             box.classList.toggle('open');
             if (box.classList.contains('open')) {
                 document.getElementById('search-input').focus();
@@ -1615,17 +1640,14 @@ The Eye at last must see itself
                 results.innerHTML = '';
                 if (!q) return;
                 items.filter(function(item) {
-                    return item.title.toLowerCase().includes(q);
+                    return item.title.toLowerCase().startsWith(q);
                 }).slice(0, 12).forEach(function(item) {
                     var div = document.createElement('div');
                     div.className = 'search-item';
-                    var tl = item.title.toLowerCase();
-                    var i = tl.indexOf(q);
-                    div.innerHTML = item.title.slice(0, i) +
-                        '<span class="search-hi">' + item.title.slice(i, i + q.length) + '</span>' +
-                        item.title.slice(i + q.length);
+                    div.innerHTML = '<span class="search-hi">' + item.title.slice(0, q.length) + '</span>' +
+                        item.title.slice(q.length);
                     div.addEventListener('click', function() {
-                        document.getElementById('mobile-search-box').classList.remove('open');
+                        document.getElementById('search-box').classList.remove('open');
                         input.value = '';
                         results.innerHTML = '';
                         var y = item.el.getBoundingClientRect().top + window.scrollY - 60;
@@ -1636,8 +1658,8 @@ The Eye at last must see itself
             });
 
             document.addEventListener('click', function(e) {
-                var box = document.getElementById('mobile-search-box');
-                var btn = document.getElementById('mobile-search-btn');
+                var box = document.getElementById('search-box');
+                var btn = document.getElementById('search-btn');
                 if (box.classList.contains('open') && !box.contains(e.target) && !btn.contains(e.target)) {
                     box.classList.remove('open');
                     input.value = '';

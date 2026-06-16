@@ -40,23 +40,31 @@
             cursor: zoom-in;
         }
         .art-text {
-            column-count: 3;
-            column-gap: 3em;
-            margin-top: 1.5em;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0 3em;
+            padding-top: 1.5em;
             font-size: 0.9rem;
             line-height: 1.9;
         }
-        .art-text p {
+        .art-col {
+            align-self: start;
+        }
+        .art-col p {
             margin-bottom: 0.8em;
-            break-inside: avoid;
         }
         .emdash {
             font-family: Georgia, serif;
             padding: 0 0.03em;
         }
-        @media (max-width: 650px) {
+        @media (min-width: 1200px) {
             .art-text {
-                column-count: 1;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (max-width: 650px) {
+            .art-image-title {
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -100,6 +108,7 @@
 
     <div class="gallery">
         <p class="gallery-title">The Second Shift — Concept Art</p>
+        <p style="text-align: justify; font-size: 1rem; opacity: 0.7; line-height: 1.8; margin: 0 auto 2em; max-width: 650px; padding: 1.2em 1.8em;">In a city where men and women can never be awake at the same time, a teenage boy and girl from opposite sides of the clock take on the biotech genius who can reunite their world but loves its elegant symmetry more than the people it keeps apart.</p>
         <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 0 0 3em 0;">
 
         <div class="art-entry">
@@ -109,13 +118,19 @@
                 <img src="art/scroll.jpg" alt="Scroll">
             </a>
             <div class="art-text">
-                <p>Like most men of his generation, my father preferred Scroll to BubbleTalk. Less cute. More sepia. I tapped on the app's icon and a projection of an ancient scroll appeared over my bed. Words began to bleed into the shimmering parchment, but in Segra Script, the default font. I don't do cursive.</p>
-                <p>"Change font. Courier."</p>
-                <p style="break-after: column;">I began to read.</p>
-                <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Sorry<br>My boy<br>Not good with emotions<br>They seem to steal my tongue<br>Will use my fingers instead</p>
-                <p style="margin-top: 1.8em;">I waited. The bottom edge of the scroll extended several inches.</p>
-                <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00; break-before: column;">I chose you<br>My boy<br>Not because the city made me<br>My choice<br>Best I ever made</p>
-                <p style="margin-top: 1.8em;">I looked away for a moment, sucked in air. The scroll shook and the words slid off, drifting away as they fell. I looked back. The shadow of more text appeared. It grew darker and came into focus.</p>
+                <div class="art-col">
+                    <p>Like most men of his generation, my father preferred Scroll to BubbleTalk. Less cute. More sepia. I tapped on the app's icon and a projection of an ancient scroll appeared over my bed. Words began to bleed into the shimmering parchment, but in Segra Script, the default font. I don't do cursive.</p>
+                    <p>"Change font. Courier."</p>
+                    <p>I began to read.</p>
+                </div>
+                <div class="art-col">
+                    <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Sorry<br>My boy<br>Not good with emotions<br>They seem to steal my tongue<br>Will use my fingers instead</p>
+                    <p style="margin-top: 1.8em;">I waited. The bottom edge of the scroll extended several inches.</p>
+                </div>
+                <div class="art-col">
+                    <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00;">I chose you<br>My boy<br>Not because the city made me<br>My choice<br>Best I ever made</p>
+                    <p style="margin-top: 1.8em;">I looked away for a moment, sucked in air. The scroll shook and the words slid off, drifting away as they fell. I looked back. The shadow of more text appeared. It grew darker and came into focus.</p>
+                </div>
             </div>
         </div>
 
@@ -128,9 +143,15 @@
                 <img src="art/implant.png" alt="The Implant">
             </a>
             <div class="art-text">
-                <p style="break-after: column;">Teddy had a circ in his brain. We all did—non-optional, implanted at birth. Courtesy of the fine folks at CircSync Biotech Corp. The tiny devices were near-impossible to hack, even for a quasi-gifted slab-jockey like me. So I couldn't break in. But I sure as heck could rattle the windows.</p>
-                <p style="break-after: column;">The implants received alerts from the CircSync network. Nobody outside the network could access the notification channel. Well, nobody but me. I had modded my slab to send audio-bubs on the same frequency. Implants couldn't handle it. The noise got dumped right in your skull.</p>
-                <p>I lifted my slab and whispered a command: "Open alert spammer." Now to pick the musical genre. Mid-euro rage-skunk? Nah, too subtle. Twang fusion? Too twangy. Might as well go with a classic. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">"Triple-max hell metal. Full volume. Infinite loop."</span></p>
+                <div class="art-col">
+                    <p>Teddy had a circ in his brain. We all did—non-optional, implanted at birth. Courtesy of the fine folks at CircSync Biotech Corp. The tiny devices were near-impossible to hack, even for a quasi-gifted slab-jockey like me. So I couldn't break in. But I sure as heck could rattle the windows.</p>
+                </div>
+                <div class="art-col">
+                    <p>The implants received alerts from the CircSync network. Nobody outside the network could access the notification channel. Well, nobody but me. I had modded my slab to send audio-bubs on the same frequency. Implants couldn't handle it. The noise got dumped right in your skull.</p>
+                </div>
+                <div class="art-col">
+                    <p>I lifted my slab and whispered a command: "Open alert spammer." Now to pick the musical genre. Mid-euro rage-skunk? Nah, too subtle. Twang fusion? Too twangy. Might as well go with a classic. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">"Triple-max hell metal. Full volume. Infinite loop."</span></p>
+                </div>
             </div>
         </div>
 
@@ -143,9 +164,15 @@
                 <img src="art/swarm.jpeg" alt="The Swarm">
             </a>
             <div class="art-text">
-                <p style="break-after: column;">Four rows of spider-bots streamed down the alley wall onto the asphalt. Hundreds of them. They swarmed Teddy and Tiny Todd, crawling up pant legs, disappearing down sleeves. Big Todd tried to run. Too late. In a blink he was covered<span class="emdash">—</span>an undulating mass of skittering metallic legs.</p>
-                <p style="break-after: column;">That's when the sparks started. The creatures appeared to be zapping Teddy and the Todds. Little pops of light exploded beneath their clothes. They pulled off their shirts, clawing at their torsos. Manic screams echoed through the alley. All three sprinted out into the street, shirtless and shimmering at low-voltage. They turned the corner and disappeared, howls cascading down Magpie Avenue.</p>
-                <p>Not sure why I was spared. Wasn't going to stick around to find out. I tried to run but slipped on a puddle of pig blood, face-planted on the pavement. The <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">click-clack</span> of the spiders stopped. Replaced by the sound of footsteps. They got louder. Closer. Real close. Then they stopped too.</p>
+                <div class="art-col">
+                    <p>Four rows of spider-bots streamed down the alley wall onto the asphalt. Hundreds of them. They swarmed Teddy and Tiny Todd, crawling up pant legs, disappearing down sleeves. Big Todd tried to run. Too late. In a blink he was covered<span class="emdash">—</span>an undulating mass of skittering metallic legs.</p>
+                </div>
+                <div class="art-col">
+                    <p>That's when the sparks started. The creatures appeared to be zapping Teddy and the Todds. Little pops of light exploded beneath their clothes. They pulled off their shirts, clawing at their torsos. Manic screams echoed through the alley. All three sprinted out into the street, shirtless and shimmering at low-voltage. They turned the corner and disappeared, howls cascading down Magpie Avenue.</p>
+                </div>
+                <div class="art-col">
+                    <p>Not sure why I was spared. Wasn't going to stick around to find out. I tried to run but slipped on a puddle of pig blood, face-planted on the pavement. The <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">click-clack</span> of the spiders stopped. Replaced by the sound of footsteps. They got louder. Closer. Real close. Then they stopped too.</p>
+                </div>
             </div>
         </div>
 

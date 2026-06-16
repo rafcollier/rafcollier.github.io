@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:ital,wght@1,400&display=swap');
+
 html {
     background-color: black;
     background-image:
@@ -11,7 +13,7 @@ body {
     background: transparent;
     height: 200vh;
     color: white;
-    font: 1.3rem Inconsolata, monospace;
+    font: 1.3rem 'IBM Plex Mono', monospace;
     text-shadow: 0 0 5px #C8C8C8;
 }
 

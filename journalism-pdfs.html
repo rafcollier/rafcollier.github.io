@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Roger Collier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagestyle.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LK5RQ82LQV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LK5RQ82LQV');
+    </script>
+</head>
+<body>
+        <!-- desktop nav -->
+        <nav class="desktop-nav">
+            <a href="index.html">[home]</a>
+            <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="index.html#bio">[bio]</a>
+            <a href="index.html#journalism">[journalism]</a>
+            <a href="index.html#firstlast">[first&amp;last]</a>
+            <a href="index.html#misc">[misc]</a>
+        </nav>
+
+        <!-- hamburger (mobile only) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">[home]</a>
+            <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="index.html#bio" onclick="toggleMenu()">[bio]</a>
+            <a href="index.html#journalism" onclick="toggleMenu()">[journalism]</a>
+            <a href="index.html#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
+            <a href="index.html#misc" onclick="toggleMenu()">[misc]</a>
+        </div>
+<a href="index.html" class="back-arrow">&#8592;</a>
+<div class="left-text">
+    <p class="top-text">subject matter: journalism pdfs</p>
+    <p>status: loading...</p>
+    <p>time: 1332ms</p>
+</div>
+
+<div class="middle-box">
+    <p>The Wearable GPS <a href="pdf-viewer.html?file=pdfs/CE130159.indd.pdf" target="_blank">[link]</a></p>
+    <p>Glide Ways <a href="pdf-viewer.html?file=pdfs/June13TestLab.pdf" target="_blank">[link]</a></p>
+    <p>The Gadget Jacket <a href="pdf-viewer.html?file=pdfs/Test Lab March.pdf" target="_blank">[link]</a></p>
+    <p>The Fitness Monitor <a href="pdf-viewer.html?file=pdfs/Test Lab.pdf" target="_blank">[link]</a></p>
+    <p>Alfie As Celebrity Dad <a href="pdf-viewer.html?file=pdfs/dad.pdf" target="_blank">[link]</a></p>
+    <p>Superhero Smackdown <a href="pdf-viewer.html?file=pdfs/comiccon.pdf" target="_blank">[link]</a></p>
+    <p>Real World Research <a href="pdf-viewer.html?file=pdfs/Water.pdf" target="_blank">[link]</a></p>
+    <p>Lost in Transition <a href="pdf-viewer.html?file=pdfs/CHEO.pdf" target="_blank">[link]</a></p>
+    <p>Shush No More <a href="pdf-viewer.html?file=pdfs/CUmagazine_fall2012_library.pdf" target="_blank">[link]</a></p>
+</div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+        document.addEventListener('click', function(e) {
+            var menu = document.getElementById('mobileMenu');
+            var hamburger = document.getElementById('hamburger');
+            if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>

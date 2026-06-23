@@ -25,11 +25,25 @@
         .mobile-email {
             display: none;
         }
+        /* status block: smaller + fuzzy highlight glow */
+        .left-text {
+            font-size: 0.65rem;
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+        /* left column section headers: fuzzy highlight glow */
+        .layout .middle-box .section-title {
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+        .layout .middle-box .photo-caption {
+            font-size: 0.72rem;
+        }
         .layout {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 2rem;
-            padding: 60px 30px 30px;
+            padding: 50px 30px 30px;
             box-sizing: border-box;
         }
 
@@ -77,8 +91,9 @@
         }
 
         .book-readlink {
-            font-size: 1.1rem;
             margin: 1.5rem 0 0;
+            text-align: center;
+            font-size: 1.05rem;
         }
 
         .book-blurb {
@@ -86,8 +101,8 @@
             font-size: 1.1rem;
             line-height: 1.6;
             width: 80%;
-            margin: 2rem auto 0;
-            padding: 1.5rem;
+            margin: 1rem auto 0;
+            padding: 1rem 1.5rem;
             box-sizing: border-box;
             border: none;
             text-align: left;
@@ -121,10 +136,16 @@
             text-transform: uppercase;
             margin-bottom: 0.3em;
         }
+        .artist-links {
+            font-size: 0.85em;
+            text-transform: none;
+        }
         .art-image-title:last-of-type {
             margin-bottom: 1.5em;
         }
         .art-image-title a svg {
+            width: 13px;
+            height: 13px;
             vertical-align: middle;
             margin-bottom: 2px;
         }
@@ -304,6 +325,9 @@
                 color: #aaffaa;
                 text-shadow: none;
             }
+            .art-modal-hint {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -396,14 +420,14 @@
             <h1 class="book-title">THE SECOND SHIFT</h1>
             <p class="book-subtitle">A Young Adult Speculative Novel</p>
             <img src="art/scroll.jpg" alt="The Second Shift concept art" class="book-art">
-            <p class="book-blurb">In a society where men and women can't be awake at the same time, a teenage hacker is pulled into a hidden world by a plum-haired girl from the other side of the clock, and they discover the person who once saved their city is hiding the only thing that can reunite it.</p>
+            <p class="book-blurb">In a society where men and women can't be awake at the same time, a teenage hacker is pulled into a hidden world by a plum-haired girl from the other side of the clock, and they discover the person who saved their city is hiding the only thing that can reunite it.</p>
             <p class="book-readlink">read chapter one <a href="second-shift-chapter-one.html">[link]</a></p>
             <hr class="section-divider">
             <h2 class="concept-heading">Concept Art &amp; Excerpts</h2>
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Tin</p>
-                <p class="art-image-title">Artist: Kels Biersteker <span class="artist-links"><a href="https://kelsium.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/kelsium.arts/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
+                <p class="art-image-title">Artist: Kels Biersteker <span class="artist-links"><a href="https://kelsium.com/" target="_blank">[website]</a> &nbsp;<a href="https://www.instagram.com/kelsium.arts/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/tin.png" onclick="openArtModal('tin'); return false;">
                         <img src="art/tin.png" alt="The Tin">
@@ -417,7 +441,7 @@
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Implant</p>
-                <p class="art-image-title">Artist: Jeremy Chan <span class="artist-links"><a href="https://chanjerr.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/chanjer_art/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
+                <p class="art-image-title">Artist: Jeremy Chan <span class="artist-links"><a href="https://chanjerr.com/" target="_blank">[website]</a> &nbsp;<a href="https://www.instagram.com/chanjer_art/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/implant.png" onclick="openArtModal('implant'); return false;">
                         <img src="art/implant.png" alt="The Implant">
@@ -431,7 +455,7 @@
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Scroll</p>
-                <p class="art-image-title">Artist: Pei Yuan Li <span class="artist-links"><a href="https://lipeiyuan.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/plumtree.jpeg/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
+                <p class="art-image-title">Artist: Pei Yuan Li <span class="artist-links"><a href="https://lipeiyuan.com/" target="_blank">[website]</a> &nbsp;<a href="https://www.instagram.com/plumtree.jpeg/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/scroll.jpg" onclick="openArtModal('scroll'); return false;">
                         <img src="art/scroll.jpg" alt="The Scroll">
@@ -445,7 +469,7 @@
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Swarm</p>
-                <p class="art-image-title">Artist: Lei Huang <span class="artist-links"><a href="https://sheridanillustration.com/graduate/lei-huang-2/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/joey.huang/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
+                <p class="art-image-title">Artist: Lei Huang <span class="artist-links"><a href="https://sheridanillustration.com/graduate/lei-huang-2/" target="_blank">[website]</a> &nbsp;<a href="https://www.instagram.com/joey.huang/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/swarm.jpeg" onclick="openArtModal('swarm'); return false;">
                         <img src="art/swarm.jpeg" alt="The Swarm">
@@ -464,7 +488,7 @@
             <button class="art-modal-close" onclick="closeArtModal()">CLOSE</button>
             <div class="art-modal-content">
                 <div class="art-modal-imgwrap">
-                    <p class="art-modal-hint">[click image to see high-res version]</p>
+                    <p class="art-modal-hint">[click image for high-res version]</p>
                     <img class="art-modal-img" id="artModalImg" src="" alt="" onclick="toggleArtZoom()">
                 </div>
                 <div class="art-modal-excerpt" id="artModalExcerpt"></div>

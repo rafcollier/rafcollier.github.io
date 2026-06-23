@@ -16,6 +16,44 @@
 
         gtag('config', 'G-LK5RQ82LQV');
     </script>
+    <style>
+        /* texting / chat bubble styling */
+        .textBubble {
+            display: inline-block;
+            border: 1px solid rgba(0, 255, 0, 0.5);
+            border-radius: 22px;
+            padding: 0.5em 0.9em;
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+        .textBubbleRight {
+            display: inline-block;
+            border: 1px solid rgba(0, 204, 204, 0.55);
+            border-radius: 22px;
+            padding: 0.5em 0.9em;
+            color: #aaffff;
+            text-shadow: 0 0 8px #00cccc;
+            text-align: left;
+        }
+        /* push Cecil's replies to the right edge */
+        .quoteRight {
+            text-align: right;
+            padding-left: 0;
+        }
+        /* gap whenever the conversation switches sides */
+        .quoteLeft + .quoteRight,
+        .quoteRight + .quoteLeft {
+            margin-top: 1.2em;
+        }
+        /* on mobile, keep bubbles narrower so left/right sides are distinct */
+        @media (max-width: 600px) {
+            .textBubble,
+            .textBubbleRight {
+                padding: 0.45em 0.7em;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
         <!-- desktop nav -->
@@ -75,12 +113,12 @@
     <p>"CCD," I replied.</p>
     <p>He flinched. Even alpha bullies feared the powder blue. "Anyway, I'm gonna climb up beside Cecil's window with this bucket," he said. "You're gonna ping him<span class="emdash">—</span>get him to poke his melon out." He pulled down the ladder. "Then we'll see if that smart-mouthed nerd likes leftovers."</p>
     <p>It was one thing to get roped into logistics, quite another to run point on comms. I had nothing against Cecil. But I enjoyed living, so had to play along. I pulled a small glass rectangle from my pocket and raised it to my mouth. "Quarter-slab," I instructed. The device expanded to a six-inch square. I flicked open BubbleTalk and tapped out a few bubs to Cecil. A flourish of lime-green holographic bubbles rose from my slab with each keystroke, popping under my nose.</p>
-    <p class="quoteText quoteLeft">come to window asap</p>
-    <p class="quoteText quoteLeft">DO NOT OPEN!</p>
-    <p class="quoteText quoteLeft">pretend the window is stuck</p>
-    <p class="quoteText quoteRight">He responded immediately: Beg pardon? Sincerely, Cecil Pips.</p>
-    <p class="quoteText quoteLeft">life &amp; death sitch here Cec, I replied.</p>
-    <p class="quoteText quoteRight">Very well, shall play along. Cheerio.</p>
+    <p class="quoteText quoteLeft"><span class="textBubble">come to<br>window asap</span></p>
+    <p class="quoteText quoteLeft"><span class="textBubble">DO NOT OPEN!</span></p>
+    <p class="quoteText quoteLeft"><span class="textBubble">pretend the<br>window is stuck</span></p>
+    <p class="quoteText quoteRight"><span class="textBubbleRight">Beg pardon?<br>Sincerely,<br>Cecil Pips</span></p>
+    <p class="quoteText quoteLeft"><span class="textBubble">life &amp; death<br>sitch here Cec</span></p>
+    <p class="quoteText quoteRight"><span class="textBubbleRight">Very well.<br>Shall play along.<br>Cheerio,<br>Cecil Pips</span></p>
     <p>By this time, Teddy had reached the landing just left of the window. He pushed his back against the brick wall, so Cecil couldn't see him, and lifted the bucket over his head. When he glanced down at me, I gave him a thumbs up. He nodded once and turned back to his left.</p>
     <p>The jammed-window idea would be a win-win, I hoped. Save Cecil from Teddy's mess. Save me from Teddy's wrath. Couldn't blame me for a janky pane in a century-old brownstone. I waved at Cecil when he appeared behind the glass. He looked awfully confused. Mildly amused. He rattled the window, his face suggesting<span class="emdash">—</span><span class="quoteText">like this?</span> Odd duck, but a good sport.</p>
     <p>Pretending to encourage him, I went full mime, lifting the bottom of an invisible window. Just a show for the Todds, who were now leaning against the wall, eyes on me.</p>
@@ -101,7 +139,7 @@
     <p>Dust-covered industrial gear filled the center of the giant room. The city banned AI and bots years ago, so every factory in Orbis had been forced to go old school. I had no idea what any of this stuff was. The word <span class="quoteText">loom</span> drifted from a deep crevasse of my brain. When my eyes found the back wall, however, I knew exactly what I was looking at. Racks upon racks of Lemur-ready laces.</p>
     <p>I was about to hunt for the color I needed, Cryo Frost, when I noticed movement to my left. It looked like a<span class="emdash">—</span>no, impossible. Must be a projection, a 3D vid stuck on loop.</p>
     <p>But it wasn't. No flicker. This was the real thing. Just thirty feet away, examining a spool of purple cotton shoelaces, was something I'd only seen in history class and bootleg holograms.</p>
-    <p>A girl.</p>
+    <p style="margin-bottom: 4em;">A girl.</p>
     <a href="index.html" class="back-arrow-bottom">←</a>
 </div>
     <script>

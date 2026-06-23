@@ -18,6 +18,13 @@
     </script>
     <!-- temp page layout overrides -->
     <style>
+        #contact {
+            scroll-margin-top: 50px;
+        }
+        /* email shown only on mobile, upper-left corner */
+        .mobile-email {
+            display: none;
+        }
         .layout {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -33,7 +40,7 @@
             top: auto;
             width: auto;
             margin: 0;
-            margin-top: 40px;
+            margin-top: 15px;
             font-size: 1.1rem;
         }
 
@@ -85,7 +92,7 @@
             border: none;
             text-align: left;
             color: #aaffaa;
-            text-shadow: 0 0 8px #00ff00;
+            text-shadow: none;
         }
 
         .section-divider {
@@ -261,6 +268,36 @@
             .layout .right-column {
                 order: -1;
             }
+            .book-art {
+                width: 96%;
+            }
+            .book-blurb {
+                width: 96%;
+            }
+            .art-entry {
+                width: 96%;
+            }
+            .art-more-link {
+                text-align: center;
+            }
+            .artist-links {
+                display: block;
+                margin-top: 0.3em;
+            }
+            /* remove leftover top spacing above the (now second) left column */
+            .layout .middle-box {
+                margin-top: 0;
+                padding-top: 0;
+            }
+            .mobile-email {
+                display: block;
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                margin: 0;
+                font-size: 0.8rem;
+                z-index: 100;
+            }
         }
     </style>
 </head>
@@ -270,6 +307,7 @@
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </symbol>
         </svg>
+        <p class="mobile-email"><a href="mailto:roger@rogercollier.com">roger@rogercollier.com</a></p>
         <div class = "left-text">
             <p class="top-text">website: rogercollier.com</p>
             <p>status: compiling...</p>
@@ -281,6 +319,7 @@
         <!-- desktop nav (browser only) -->
         <nav class="desktop-nav">
             <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="#contact">[contact]</a>
             <a href="#bio">[bio]</a>
             <a href="#journalism">[journalism]</a>
             <a href="#firstlast">[first&amp;last]</a>
@@ -290,7 +329,9 @@
         <!-- hamburger (mobile only) -->
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
         <div class="mobile-menu" id="mobileMenu">
+            <a href="#" onclick="toggleMenu(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;">[home]</a>
             <a href="second-shift-chapter-one.html">[the second shift]</a>
+            <a href="#contact" onclick="toggleMenu()">[contact]</a>
             <a href="#bio" onclick="toggleMenu()">[bio]</a>
             <a href="#journalism" onclick="toggleMenu()">[journalism]</a>
             <a href="#firstlast" onclick="toggleMenu()">[first&amp;last]</a>
@@ -299,7 +340,8 @@
 
         <div class="layout">
         <div class="middle-box">
-            <p class="contact">contact: roger@rogercollier.com</p>
+            <p id="contact" class="section-title">contact:</p>
+            <p>roger@rogercollier.com</p>
             <p class="divider">.........................</p>
             <img id="bio" src="images/rogerHeadShot.png" alt="subject photo No. 0013" class="headshot">
             <p class="photo-caption" style="font-style: italic;">subject photo No. 0013</p>
@@ -355,7 +397,7 @@
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Tin</p>
-                <p class="art-image-title">Artist: Kels Biersteker &nbsp;<a href="https://kelsium.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/kelsium.arts/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></p>
+                <p class="art-image-title">Artist: Kels Biersteker <span class="artist-links"><a href="https://kelsium.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/kelsium.arts/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/tin.png" onclick="openArtModal('tin'); return false;">
                         <img src="art/tin.png" alt="The Tin">
@@ -364,12 +406,12 @@
                 <hr class="excerpt-divider">
                 <p class="art-excerpt">The woman tilted her head and laughed. She was beautiful. My father reached out to her, tried to touch her hair. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">His fingertips glowed in the light.</span></p>
                 <hr class="excerpt-divider">
-                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('tin'); return false;">[click for larger image and longer excerpt]</a></p>
+                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('tin'); return false;">[click for longer excerpt]</a></p>
             </div>
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Implant</p>
-                <p class="art-image-title">Artist: Jeremy Chan &nbsp;<a href="https://chanjerr.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/chanjer_art/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></p>
+                <p class="art-image-title">Artist: Jeremy Chan <span class="artist-links"><a href="https://chanjerr.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/chanjer_art/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/implant.png" onclick="openArtModal('implant'); return false;">
                         <img src="art/implant.png" alt="The Implant">
@@ -378,12 +420,12 @@
                 <hr class="excerpt-divider">
                 <p class="art-excerpt">Robotic arms with long, thin needles lowered and slid into the backs of their skulls. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Good thing they sedate us for that</span>, I thought, grimacing.</p>
                 <hr class="excerpt-divider">
-                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('implant'); return false;">[click for larger image and longer excerpt]</a></p>
+                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('implant'); return false;">[click for longer excerpt]</a></p>
             </div>
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Scroll</p>
-                <p class="art-image-title">Artist: Pei Yuan Li &nbsp;<a href="https://lipeiyuan.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/plumtree.jpeg/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></p>
+                <p class="art-image-title">Artist: Pei Yuan Li <span class="artist-links"><a href="https://lipeiyuan.com/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/plumtree.jpeg/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/scroll.jpg" onclick="openArtModal('scroll'); return false;">
                         <img src="art/scroll.jpg" alt="The Scroll">
@@ -392,12 +434,12 @@
                 <hr class="excerpt-divider">
                 <p class="art-excerpt">I chose you. My boy. Not because the city made me. My choice. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Best I ever made.</span></p>
                 <hr class="excerpt-divider">
-                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('scroll'); return false;">[click for larger image and longer excerpt]</a></p>
+                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('scroll'); return false;">[click for longer excerpt]</a></p>
             </div>
 
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Swarm</p>
-                <p class="art-image-title">Artist: Lei Huang &nbsp;<a href="https://sheridanillustration.com/graduate/lei-huang-2/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/joey.huang/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></p>
+                <p class="art-image-title">Artist: Lei Huang <span class="artist-links"><a href="https://sheridanillustration.com/graduate/lei-huang-2/" target="_blank">[Website]</a> &nbsp;<a href="https://www.instagram.com/joey.huang/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
                     <a class="art-img-link" href="art/swarm.jpeg" onclick="openArtModal('swarm'); return false;">
                         <img src="art/swarm.jpeg" alt="The Swarm">
@@ -406,7 +448,7 @@
                 <hr class="excerpt-divider">
                 <p class="art-excerpt">All three sprinted out into the street, <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">shirtless and shimmering at low-voltage.</span> They turned the corner and disappeared, howls cascading down Magpie Avenue.</p>
                 <hr class="excerpt-divider">
-                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('swarm'); return false;">[click for larger image and longer excerpt]</a></p>
+                <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('swarm'); return false;">[click for longer excerpt]</a></p>
             </div>
         </div>
         </div>

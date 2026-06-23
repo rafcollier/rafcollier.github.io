@@ -25,6 +25,7 @@
             padding: 0.5em 0.9em;
             color: #aaffaa;
             text-shadow: 0 0 8px #00ff00;
+            text-align: left;
         }
         .textBubbleRight {
             display: inline-block;
@@ -35,15 +36,30 @@
             text-shadow: 0 0 8px #00cccc;
             text-align: left;
         }
-        /* push Cecil's replies to the right edge */
-        .quoteRight {
+        /* cluster the conversation around the column center:
+           left bubbles end at the midline, right bubbles begin at it */
+        .quoteLeft {
+            width: 50%;
             text-align: right;
             padding-left: 0;
+        }
+        .quoteRight {
+            width: 50%;
+            margin-left: 50%;
+            text-align: left;
+            padding-left: 0;
+        }
+        /* tighten spacing between consecutive bubbles */
+        .quoteLeft,
+        .quoteRight {
+            line-height: 1.3;
+            margin-top: 0.12em;
+            margin-bottom: 0.12em;
         }
         /* gap whenever the conversation switches sides */
         .quoteLeft + .quoteRight,
         .quoteRight + .quoteLeft {
-            margin-top: 1.2em;
+            margin-top: 1.1em;
         }
         /* on mobile, keep bubbles narrower so left/right sides are distinct */
         @media (max-width: 600px) {

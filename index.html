@@ -482,13 +482,12 @@
                 <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('scroll'); return false;">[click for longer excerpt]</a></p>
             </div>
 
-            <!-- The Swarm: commented out until the finished art piece arrives
             <div class="art-entry">
                 <p class="art-image-title" style="font-size: 1.2rem;">The Swarm</p>
                 <p class="art-image-title">Artist: Lei Huang <span class="artist-links"><a href="https://sheridanillustration.com/graduate/lei-huang-2/" target="_blank">[website]</a> &nbsp;<a href="https://www.instagram.com/joey.huang/" target="_blank"><svg width="16" height="16" fill="currentColor"><use href="#icon-instagram"/></svg></a></span></p>
                 <div class="art-img-wrap">
-                    <a class="art-img-link" href="art/swarm.jpeg" onclick="openArtModal('swarm'); return false;">
-                        <img src="art/swarm.jpeg" alt="The Swarm">
+                    <a class="art-img-link" href="art/swarm.png" onclick="openArtModal('swarm'); return false;">
+                        <img src="art/swarm.png" alt="The Swarm">
                     </a>
                 </div>
                 <hr class="excerpt-divider">
@@ -496,7 +495,6 @@
                 <hr class="excerpt-divider">
                 <p class="art-more-link"><a href="second-shift-art.html" onclick="openArtModal('swarm'); return false;">[click for longer excerpt]</a></p>
             </div>
-            -->
         </div>
         </div>
 
@@ -557,7 +555,6 @@
                     <p style="margin-top: 1.8em;">I looked away for a moment, sucked in air. The scroll shook and the words slid off, drifting away as they fell. I looked back. The shadow of more text appeared. It grew darker and came into focus.</p>
                 </div>
             </div>
-            <!-- excerpt-swarm: commented out until the finished art piece arrives
             <div id="excerpt-swarm">
                 <div class="art-col">
                     <p><span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Click-clack. Click-clack. Click-clack. Click-clack. Click-clack. Click-clack. Click-clack.</span></p>
@@ -570,15 +567,13 @@
                     <p>Not sure why I was spared. Wasn't going to stick around to find out. I tried to run but slipped on a puddle of pig blood, face-planted on the pavement. The <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">click-clack</span> of the spiders stopped. Replaced by the sound of footsteps. They got louder. Closer. Real close. Then they stopped too.</p>
                 </div>
             </div>
-            -->
         </div>
     <script>
         var artData = {
             tin:     { img: 'art/tin.png',     alt: 'The Tin',     excerpt: 'excerpt-tin' },
             implant: { img: 'art/implant.png', alt: 'The Implant', excerpt: 'excerpt-implant' },
-            scroll:  { img: 'art/scroll.jpg',  alt: 'The Scroll',  excerpt: 'excerpt-scroll' }
-            // swarm: commented out until the finished art piece arrives
-            // swarm:   { img: 'art/swarm.jpeg',  alt: 'The Swarm',   excerpt: 'excerpt-swarm' }
+            scroll:  { img: 'art/scroll.jpg',  alt: 'The Scroll',  excerpt: 'excerpt-scroll' },
+            swarm:   { img: 'art/swarm.png',  alt: 'The Swarm',   excerpt: 'excerpt-swarm' }
         };
         function openArtModal(key) {
             var d = artData[key];

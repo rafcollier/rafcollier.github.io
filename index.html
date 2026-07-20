@@ -41,7 +41,7 @@
         }
         .layout {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 0.85fr 2fr;
             gap: 2rem;
             padding: 50px 30px 30px;
             box-sizing: border-box;
@@ -55,7 +55,7 @@
             width: auto;
             margin: 0;
             margin-top: 15px;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .right-column {
@@ -76,13 +76,55 @@
         .book-subtitle {
             font-size: 1.1rem;
             margin: 0.5rem 0 0;
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+
+        .book-art-wrap {
+            width: 80%;
+            margin: 2rem auto 0;
+        }
+
+        .book-art-link {
+            display: block;
+            border: none;
+            text-decoration: none;
+            cursor: zoom-in;
         }
 
         .book-art {
             display: block;
-            width: 80%;
+            width: 100%;
             height: auto;
-            margin: 2rem auto 0;
+        }
+
+        .book-art-credit {
+            text-align: right;
+            margin: 0.4em 0 0;
+            font-size: 0.65rem;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.35em;
+        }
+
+        .book-art-credit a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
+        }
+
+        .book-art-credit a:hover {
+            opacity: 1;
+        }
+
+        .book-art-credit svg {
+            width: 11px;
+            height: 11px;
+            vertical-align: middle;
         }
 
         /* slightly smaller headshot on the temp page (your photo only) */
@@ -94,6 +136,16 @@
             margin: 1.5rem 0 0;
             text-align: center;
             font-size: 1.05rem;
+            text-transform: uppercase;
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+        .book-readlink a {
+            color: #aaffaa;
+            text-shadow: 0 0 8px #00ff00;
+        }
+        .book-readlink .readlink-break {
+            display: none;
         }
 
         .book-blurb {
@@ -106,7 +158,7 @@
             box-sizing: border-box;
             border: none;
             text-align: left;
-            color: #aaffaa;
+            color: white;
             text-shadow: none;
         }
 
@@ -214,8 +266,7 @@
         }
         .art-modal-imgwrap {
             position: relative;
-            width: 80%;
-            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
         }
         .art-modal-hint {
@@ -229,6 +280,10 @@
             width: 100%;
             display: block;
             cursor: zoom-in;
+        }
+        .art-modal-img[src="art/swarm.png"] {
+            width: 95%;
+            margin: 0 auto;
         }
         .art-modal-img.zoomed {
             position: fixed;
@@ -300,7 +355,7 @@
             .layout .right-column {
                 order: -1;
             }
-            .book-art {
+            .book-art-wrap {
                 width: 96%;
             }
             .book-blurb {
@@ -322,6 +377,16 @@
             .layout .middle-box {
                 margin-top: 0;
                 padding-top: 0;
+                font-size: 1.1rem;
+            }
+            .book-readlink .readlink-sep {
+                display: none;
+            }
+            .book-readlink .readlink-break {
+                display: block;
+            }
+            .book-readlink .readlink-subtitle {
+                text-transform: none;
             }
             .mobile-email {
                 display: block;
@@ -431,10 +496,18 @@
 
         <div class="right-column">
             <h1 class="book-title">THE SECOND SHIFT</h1>
-            <p class="book-subtitle">A Young Adult Speculative Novel</p>
-            <img src="art/implant.png" alt="The Second Shift concept art" class="book-art">
+            <p class="book-subtitle">A city divided. Not by walls. By hours.</p>
+            <div class="book-art-wrap">
+                <a class="book-art-link" href="art/roof.jpg" onclick="openArtModal('roof'); return false;">
+                    <img src="art/roof.jpg" alt="The Second Shift concept art" class="book-art">
+                </a>
+                <p class="book-art-credit">Artist: Taylor De Nobrega
+                    <a href="https://www.taylordenobrega.com/" target="_blank">[website]</a>
+                    <a href="https://www.instagram.com/tay.deno/" target="_blank"><svg width="11" height="11" fill="currentColor"><use href="#icon-instagram"/></svg></a>
+                </p>
+            </div>
             <p class="book-blurb">In a society where men and women can't be awake at the same time, a tech-obsessed teen is pulled across the sleep divide by a plum-haired girl from the other side of the clock, and together they take on the biotech genius who once saved their city but is now hiding the one thing that can reunite it.</p>
-            <p class="book-readlink">read chapter one <a href="second-shift-chapter-one.html">[link]</a></p>
+            <p class="book-readlink"><span class="readlink-subtitle">A Young Adult Speculative Novel</span><span class="readlink-sep"> <span class="emdash">—</span> </span><br class="readlink-break">Read Chapter One <a href="second-shift-chapter-one.html">[link]</a></p>
             <hr class="section-divider">
             <h2 class="concept-heading">Inside Orbis</h2>
             <p class="concept-book">The Second Shift</p>
@@ -514,62 +587,64 @@
         <div id="artExcerpts" hidden>
             <div id="excerpt-tin">
                 <div class="art-col">
-                    <p>He took a deep breath and reached up, pushing aside mugs we no longer used. His fingertips found the side of an old coffee tin. He coaxed it forward in a slow spin until it tipped into his other hand.</p>
-                    <p>After setting it on the counter and removing the lid, he stared inside. He placed both hands on the counter, spread wide. His eyes never left the can.</p>
+                    <p>After setting the tin on the counter and removing the lid, he stared inside. He placed both hands on the counter, spread wide. His eyes never left the can.</p>
+                    <p>Finally, he put a hand inside. He pulled out a glass tab the size of a cracker.</p>
                 </div>
                 <div class="art-col">
-                    <p>My father didn't speak much, and our sparse conversations were generally about work or school or what to have for dinner. Not deep. I always thought it was because he had little to say, not because he had things to hide.</p>
-                    <p>Finally, he put a hand inside. He pulled out a glass tab the size of a cracker. It was yellow from age. He laid it on the counter, beside the can, and tapped it once.</p>
+                    <p>It was yellow from age. He laid it on the counter, beside the can, and tapped it once. A hologram appeared, struggling to stay visible. It flickered for several seconds before stabilizing. Still jittery, but there. It was a woman.</p>
                 </div>
                 <div class="art-col">
-                    <p>A hologram appeared, struggling to stay visible. It flickered for several seconds before stabilizing. Still jittery, but there. It was a woman. Her face was framed by long, straight hair. Couldn't tell the color. The projection was all a muted green. The woman tilted her head and laughed. She was beautiful. My father reached out to her, tried to touch her hair. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">His fingertips glowed in the light.</span></p>
+                    <p>Her face was framed by long, straight hair. Couldn't tell the color. The projection was all a muted green. The woman tilted her head and laughed. She was beautiful. My father reached out to her, tried to touch her hair. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">His fingertips glowed in the light.</span></p>
                 </div>
             </div>
             <div id="excerpt-implant">
                 <div class="art-col">
-                    <p>The hospital morphed into a high-tech lab. Two scientists stood with hands on chins, examining a 3D projection of a tiny device. The video zoomed in as the object slowly rotated. It was a clear capsule with a microchip inside. Thousands of hair-thin optic fibers covered the surface, curling and drifting like jellyfish tentacles.</p>
-                    <p>The student in front of me rubbed the back of his head and shifted in his seat.</p>
-                </div>
-                <div class="art-col">
                     <p>"Researchers tried everything to fight the virus," said the narrator. "Nothing worked. But they noticed something strange. Patients with sleep disorders in an unrelated biotech experiment weren't getting sick."</p>
-                    <p>The video panned right and pulled back to reveal several research subjects in medical exam chairs. Dozens of wires extended from their heads to diagnostic machines.</p>
                 </div>
                 <div class="art-col">
-                    <p>Robotic arms with long, thin needles lowered and slid into the backs of their skulls.</p>
-                    <p>Good thing they sedate us for that, I thought, grimacing.</p>
-                    <p>"A cutting-edge brain implant suppressed the symptoms<span class="emdash">—</span>not a cure, but a discovery that saved countless lives. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">There was, however, a complication.</span>"</p>
+                    <p>The video panned right and pulled back to reveal several research subjects in medical exam chairs. Dozens of wires extended from their heads to diagnostic machines. Robotic arms with long, thin needles lowered and slid into the backs of their skulls.</p>
+                </div>
+                <div class="art-col">
+                    <p>Good thing they sedate us for that, I thought, grimacing. "A cutting-edge brain implant suppressed the symptoms<span class="emdash">—</span>not a cure, but a discovery that saved countless lives. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">There was, however, a complication.</span>"</p>
                 </div>
             </div>
             <div id="excerpt-scroll">
                 <div class="art-col">
-                    <p>Like most men of his generation, my father preferred Scroll to BubbleTalk. Less cute. More sepia. I tapped on the app's icon and a projection of an ancient scroll appeared over my bed. Words began to bleed into the shimmering parchment, but in Segra Script, the default font. I don't do cursive.</p>
-                    <p>"Change font. Courier."</p>
-                    <p>I began to read.</p>
-                </div>
-                <div class="art-col">
                     <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Sorry<br>My boy<br>Not good with emotions<br>They seem to steal my tongue<br>Will use my fingers instead</p>
-                    <p style="margin-top: 1.8em;">I waited. The bottom edge of the scroll extended several inches.</p>
                 </div>
                 <div class="art-col">
                     <p style="text-align: center; font-style: italic; color: #aaffaa; text-shadow: 0 0 8px #00ff00;">I chose you<br>My boy<br>Not because the city made me<br>My choice<br>Best I ever made</p>
-                    <p style="margin-top: 1.8em;">I looked away for a moment, sucked in air. The scroll shook and the words slid off, drifting away as they fell. I looked back. The shadow of more text appeared. It grew darker and came into focus.</p>
+                </div>
+                <div class="art-col">
+                    <p>I looked away for a moment, sucked in air. The scroll shook and the words slid off, drifting away as they fell. I looked back. The shadow of more text appeared. It grew darker and came into focus.</p>
                 </div>
             </div>
             <div id="excerpt-swarm">
                 <div class="art-col">
-                    <p><span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Click-clack. Click-clack. Click-clack. Click-clack. Click-clack. Click-clack. Click-clack.</span></p>
-                    <p>Four rows of identical bots streamed down the alley wall onto the asphalt. Hundreds of them. They swarmed Teddy and Little Todd, crawling up pant legs, disappearing down sleeves. Big Todd tried to run. Too late. In a blink he was covered<span class="emdash">—</span>an undulating mass of skittering metallic legs.</p>
+                    <p>Big Todd tried to run. Too late. In a blink he was covered<span class="emdash">—</span>an undulating mass of skittering metallic legs. That's when the sparks began. The bots appeared to be zapping</p>
                 </div>
                 <div class="art-col">
-                    <p>That's when the sparks began. The bots appeared to be zapping Teddy and the Todds. Little pops of light exploded beneath their clothes. They pulled off their shirts, clawing at their torsos. Manic screams echoed through the alley. All three sprinted out into the street, shirtless and shimmering at low-voltage. They turned the corner and disappeared, howls cascading down Magpie Avenue.</p>
+                    <p>Teddy and the Todds. Little pops of light exploded beneath their clothes. They pulled off their shirts, clawing at their torsos. Manic screams echoed through the alley.</p>
                 </div>
                 <div class="art-col">
-                    <p>Not sure why I was spared. Wasn't going to stick around to find out. I tried to run but slipped on a puddle of pig blood. Face-planted on the pavement. The <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">click-clack</span> of the spiders stopped. Replaced by the sound of footsteps. They got louder. Closer. Real close. Then they stopped too.</p>
+                    <p>All three sprinted out into the street, <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">shirtless and shimmering at low-voltage.</span> They turned the corner and disappeared, howls cascading down Magpie Avenue.</p>
+                </div>
+            </div>
+            <div id="excerpt-roof">
+                <div class="art-col">
+                    <p>The stores and offices along Ōtori Drive were prepping for close as I walked home from school. Nobody worked during the last or first hour of each cycle<span class="emdash">—</span>the transition period. A barber holding a broom flipped the sign on a glass door to <em>Closed</em>. A grocer in a burgundy apron packed oranges into a crate.</p>
+                </div>
+                <div class="art-col">
+                    <p>In less than three hours, while every man and boy slept, these doors would unlock. Cash registers would reopen. Computers would reboot. <span style="color: #aaffaa; text-shadow: 0 0 8px #00ff00;">Business as usual, but without us.</span> The women of the city would emerge from their homes in East Orbis. They would come here, to the shared middle, and start their day. Well, their night.</p>
+                </div>
+                <div class="art-col">
+                    <p>The sky began to dim<span class="emdash">—</span>a sign for Cycle One to wrap things up. I craned my neck to look at the sun. It wasn't real, of course. A digital forgery to make our world seem normal, like outside the dome. It didn't set in Orbis, the evening sun. It faded away to nothing like a movie's final scene.</p>
                 </div>
             </div>
         </div>
     <script>
         var artData = {
+            roof:    { img: 'art/roof.jpg',    alt: 'The Second Shift concept art', excerpt: 'excerpt-roof' },
             tin:     { img: 'art/tin.png',     alt: 'The Tin',     excerpt: 'excerpt-tin' },
             implant: { img: 'art/implant.png', alt: 'The Implant', excerpt: 'excerpt-implant' },
             scroll:  { img: 'art/scroll.jpg',  alt: 'The Scroll',  excerpt: 'excerpt-scroll' },
@@ -582,7 +657,9 @@
             img.classList.remove('zoomed');
             img.src = d.img;
             img.alt = d.alt;
-            document.getElementById('artModalExcerpt').innerHTML = document.getElementById(d.excerpt).innerHTML;
+            var excerptEl = document.getElementById('artModalExcerpt');
+            excerptEl.innerHTML = d.excerpt ? document.getElementById(d.excerpt).innerHTML : '';
+            excerptEl.style.display = d.excerpt ? '' : 'none';
             var modal = document.getElementById('artModal');
             modal.classList.add('open');
             modal.setAttribute('aria-hidden', 'false');
